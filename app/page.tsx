@@ -64,28 +64,39 @@ const HeadIn = styled(Wrap)`
   gap: 20px;
 `;
 const Brand = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 800;
-  font-size: 14px;
   letter-spacing: 0.12em;
   white-space: nowrap;
-  span:first-child {
-    color: var(--gold);
-    font-size: 18px;
-    margin-right: 10px;
+
+  .brand-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    flex: none;
   }
+
   .brandtext {
     color: white;
     font-size: 14px;
   }
+
   @media (max-width: 520px) {
+    .brand-icon {
+      width: 34px;
+      height: 34px;
+    }
+
     .brandtext {
       display: none;
     }
-    span:first-child {
-      margin-right: 0;
-    }
   }
 `;
+
+
 const Nav = styled.nav<{ $open: boolean }>`
   display: flex;
   gap: 22px;
@@ -1309,10 +1320,16 @@ export default function Home() {
         />
         <Head>
           <HeadIn>
-            <Brand href="#accueil" aria-label="Alpha Ousmane Diallo — accueil">
-              <span>◆</span>
-              <span className="brandtext">ALPHA OUSMANE DIALLO</span>
-            </Brand>
+          <Brand href="#accueil" aria-label="Alpha Ousmane Diallo — accueil">
+  <img
+    className="brand-icon"
+    src="/images/brand.png"
+    alt=""
+    width={34}
+    height={34}
+  />
+  <span className="brandtext">ALPHA OUSMANE DIALLO</span>
+</Brand>
             <Nav
               $open={menuOpen}
               aria-label={

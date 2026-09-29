@@ -5,8 +5,9 @@ import StyledRegistry from "./styled-registry";
 export const metadata: Metadata = {
   title: "Alpha Ousmane Diallo — Développeur full-stack",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: { url: "/images/brand.png", type: "image/png" },
+    shortcut: "/images/brand.png",
+    apple: "/images/brand.png",
   },
 };
 
@@ -17,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className="antialiased"><StyledRegistry>{children}</StyledRegistry></body>
+      <body className="antialiased">
+        <StyledRegistry>{children}</StyledRegistry>
+      </body>
     </html>
   );
 }
